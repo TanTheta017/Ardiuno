@@ -1,0 +1,26 @@
+int ypin=8,rpin=13;
+int ytime=500,rtime=500;
+int yblink=3,rblink=5;
+int j;
+
+void setup()
+{
+  pinMode(ypin, OUTPUT);
+  pinMode(rpin, OUTPUT);
+}
+
+void loop()
+{
+  for(j=1;j<=yblink;j++)
+  {
+  digitalWrite(ypin,HIGH);
+  delay(ytime);
+  digitalWrite(ypin,LOW);
+  delay(ytime);
+  }
+  for(j=1;j<=rblink;j++)
+  { digitalWrite(rpin,HIGH);
+  delay(rtime);
+  digitalWrite(rpin,LOW);
+  delay(rtime);}
+}
