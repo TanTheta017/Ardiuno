@@ -1,0 +1,24 @@
+int mp=A1,rp=9;
+int readval,dt=2000;
+float v2;
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(mp,INPUT);
+  pinMode(rp,OUTPUT);
+}
+
+void loop()
+{
+ readval=analogRead(mp);
+  v2=(5./1023.)*readval;
+  Serial.print("Potentiameter Voltage is: ");
+  Serial.println(v2);
+  if(v2>=2 && v2<=2)
+  {digitalWrite(rp,HIGH);
+  }
+  if(v2<2 || v2>2)
+  {digitalWrite(rp,LOW);}
+  delay(dt);
+}
