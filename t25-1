@@ -1,0 +1,27 @@
+int lightpen=A0;
+int lightval;
+int dt=500;
+int redpin=8;
+int greenpin=2;
+
+void setup()
+{
+  pinMode(lightpen,INPUT);
+  pinMode(redpin,OUTPUT);
+  pinMode(greenpin,OUTPUT);
+Serial.begin(9600);}
+
+void loop()
+{
+  lightval=analogRead(lightpen);
+  Serial.println(lightval);
+  delay(dt);
+  
+  if(lightval>350)
+  {digitalWrite(greenpin,HIGH);
+  digitalWrite(redpin,LOW);}
+  
+  if(lightval<350)
+  {digitalWrite(greenpin,LOW);
+  digitalWrite(redpin,HIGH);}
+}
