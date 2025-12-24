@@ -1,0 +1,16 @@
+int mvp=A2;
+int readval;
+float v2;
+int dt=250;
+
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop()
+{readval=analogRead(mvp);
+ v2=(5./1023.)*readval;
+ Serial.println(v2);
+ delay(dt);
+}
