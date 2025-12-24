@@ -1,0 +1,16 @@
+int buzzpin=13;
+int bt1=1;
+int bt2=400;
+
+void setup()
+{
+  pinMode(buzzpin, OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(buzzpin, HIGH);
+  delayMicroseconds(bt2); 
+  digitalWrite(buzzpin, LOW);
+  delayMicroseconds(bt2);
+}
