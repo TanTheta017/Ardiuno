@@ -1,0 +1,39 @@
+int redpin=13;
+int greenpin=12;
+int bluepin=8;
+String mycolor;
+String msg="Color of LED: ";
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(redpin,OUTPUT);
+  pinMode(greenpin,OUTPUT);
+  pinMode(bluepin,OUTPUT);
+}
+
+void loop()
+{
+ Serial.println(msg);
+ while(Serial.available()==0)
+  {}
+ mycolor=Serial.readString();
+  
+  if(mycolor=="Red"||mycolor=="red")
+  {digitalWrite(redpin,HIGH);
+  digitalWrite(greenpin,LOW);
+  digitalWrite(bluepin,LOW);}
+  
+  if(mycolor=="Green"||mycolor=="green")
+  {digitalWrite(redpin,LOW);
+  digitalWrite(greenpin,HIGH);
+  digitalWrite(bluepin,LOW);}
+  
+  if(mycolor=="BLUE"||mycolor=="blue")
+  {digitalWrite(redpin,LOW);
+  digitalWrite(greenpin,LOW);
+  digitalWrite(bluepin,HIGH);}
+  
+  delay(500);
+  
+}
