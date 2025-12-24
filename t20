@@ -1,0 +1,48 @@
+int rpin=13;
+int bpin=12;
+int gpin=8;
+String mycolor;
+String msg="Color of LED:";
+int dt=500;
+  
+void setup()
+{
+Serial.begin(9600);
+  pinMode(rpin,OUTPUT);
+  pinMode(gpin,OUTPUT);
+  pinMode(bpin,OUTPUT);
+}
+
+void loop()
+{
+  Serial.println(msg);
+  while(Serial.available()==0){}
+  mycolor=Serial.readString();
+  
+  if (mycolor=="red"||mycolor=="Red")
+  {digitalWrite(rpin,HIGH);
+  digitalWrite(gpin,LOW);
+  digitalWrite(bpin,LOW);}
+  
+   if (mycolor=="blue"||mycolor=="Blue")
+  {digitalWrite(rpin,LOW);
+  digitalWrite(gpin,LOW);
+  digitalWrite(bpin,HIGH);}
+  
+   if (mycolor=="green"||mycolor=="Green")
+  {digitalWrite(rpin,LOW);
+  digitalWrite(gpin,HIGH);
+  digitalWrite(bpin,LOW);}
+  
+   if (mycolor=="White"||mycolor=="white")
+  {digitalWrite(rpin,HIGH);
+  analogWrite(gpin,255);
+  analogWrite(bpin,150);}
+  
+   if (mycolor=="Maroon"||mycolor=="maroon")
+  {analogWrite(rpin,225);
+  digitalWrite(gpin,LOW);
+  analogWrite(bpin,128);}
+  
+  delay(dt);
+}
