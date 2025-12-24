@@ -1,0 +1,25 @@
+int toggleswitch=8,buttonnew,buttonold=1;
+int redpin=5,ledstat=0,dt=100;
+
+void setup()
+{pinMode(redpin,OUTPUT);
+pinMode(toggleswitch,INPUT);
+Serial.begin(9600);
+}
+
+void loop()
+{
+buttonnew=digitalRead(toggleswitch);
+
+if(buttonold==0 && buttonnew==1)
+{if(ledstat==0)
+{
+digitalWrite(redpin,HIGH);
+ledstat=1;}
+
+else
+{digitalWrite(redpin,LOW);
+ledstat=0;}
+}
+buttonold=buttonnew;
+delay(dt);}
