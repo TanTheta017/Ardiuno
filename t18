@@ -1,0 +1,21 @@
+int numblinks;
+String msg="Number of blinks:";
+int j;
+int dt=500;
+int redpin=13;
+
+void setup()
+{Serial.begin(9600);
+  pinMode(redpin, OUTPUT);
+}
+
+void loop()
+{Serial.println(msg);
+ while(Serial.available()==0){}
+ numblinks=Serial.parseInt();
+ for(j=1;j<=numblinks;j++)
+ {digitalWrite(redpin,HIGH);
+ delay(dt);
+ digitalWrite(redpin,LOW);
+ delay(dt);}
+}
