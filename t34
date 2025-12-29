@@ -1,0 +1,15 @@
+int buttonpin=5,buttonval,dt=500;
+void setup()
+{
+  pinMode(buttonpin, INPUT);
+  digitalWrite(buttonpin,HIGH);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  buttonval=digitalRead(buttonpin);
+  Serial.print("Your button is ");
+  Serial.println(buttonval);
+  delay(dt);
+}
