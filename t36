@@ -1,0 +1,27 @@
+int tiltpin=12;
+int greenpin=5;
+int redpin=9;
+int tiltval,dt=500;
+
+void setup()
+{
+  pinMode(tiltpin, INPUT);
+  pinMode(redpin,OUTPUT);
+  pinMode(greenpin,OUTPUT);
+  digitalWrite(tiltpin,HIGH);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  tiltval=digitalRead(tiltpin);
+  Serial.println(tiltval);
+  delay(dt);
+  if(tiltval==1)
+  {digitalWrite(greenpin,HIGH);
+  digitalWrite(redpin,LOW);}
+  
+  else if(tiltval==0)
+  {digitalWrite(redpin,HIGH);
+  digitalWrite(greenpin,LOW);}
+}
