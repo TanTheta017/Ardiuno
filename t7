@@ -1,0 +1,22 @@
+int bbright=10;
+int d=500;
+
+void setup()
+{// put yout setup code here, to run once:
+pinMode(p1,OUTPUT);
+}
+
+
+void loop()
+{// put your main code here, to run repeat:
+analogWrite(p1,bright1);
+delay(d);
+analogWrite(p1,bright2);
+delay(d);
+analogWrite(p1,bright3);
+delay(d);
+analogWrite(p1,abright);
+delay(d);
+analogWrite(p1,bbright);
+delay(d);
+}
