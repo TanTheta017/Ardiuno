@@ -1,0 +1,49 @@
+#include <Servo.h>
+Servo xservo;
+Servo yservo;
+int xpin=A2;
+int ypin=A4;
+int spin=2;
+int xspin=11;
+int yspin=4;
+int buzzpin=7;
+int wvx;
+int wvy;
+int xval;
+int yval;
+int sval;
+int dt=200;
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(xpin,INPUT);
+  pinMode(ypin,INPUT);
+  pinMode(spin,INPUT);
+  pinMode(xspin,OUTPUT);
+  pinMode(yspin,OUTPUT);
+  pinMode(buzzpin,OUTPUT);
+  
+  xservo.attach(xspin);
+  yservo.attach(yspin);
+  
+  digitalWrite(spin,HIGH);
+}
+
+void loop()
+{
+  xval=analogRead(xpin);
+  wvx=(180./1023.)*xval;
+  yval=analogRead(ypin);
+  wvy=(180./1023.)*yval;
+  sval=analogRead(spin);
+  
+  xservo.write(wvx);
+  yservo.write(wvy);
+  
+  if(sval==0)
+  {digitalWrite(buzzpin,HIGH);}
+  
+  else
+  {digitalWrite(buzzpin,LOW);}
+}
