@@ -1,0 +1,18 @@
+int speedpin=5,dir1=11,dir2=4;
+int mspeed=100;
+int dt1=100,dt2=5000;
+void setup()
+{
+  pinMode(speedpin, OUTPUT);
+pinMode(dir1,OUTPUT);
+pinMode(dir2,OUTPUT);}
+
+void loop()
+{
+  digitalWrite(dir1,LOW);
+  digitalWrite(dir2,HIGH);
+  analogWrite(speedpin,255);
+  delay(dt1);
+  analogWrite(speedpin,mspeed);
+  delay(dt2);
+}
