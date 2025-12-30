@@ -1,0 +1,46 @@
+int rLED=8;
+int dit=300;
+int dah=800;
+int LongW=1500;
+
+void setup()
+{// put yout setup code here, to run once:
+pinMode(rLED,OUTPUT);
+}
+
+void loop()
+{// put your main code here, to run repeat:
+digitalWrite(rLED,HIGH);
+delay(dit);
+digitalWrite(rLED,LOW);
+delay(dit);
+  
+digitalWrite(rLED,HIGH);
+delay(dit);
+digitalWrite(rLED,LOW);
+delay(dit);
+
+digitalWrite(rLED,HIGH);
+delay(dit);
+digitalWrite(rLED,LOW);
+delay(dit);
+
+digitalWrite(rLED,HIGH);
+delay(dah);
+digitalWrite(rLED,LOW);
+delay(dah);
+
+digitalWrite(rLED,HIGH);
+delay(dah);
+digitalWrite(rLED,LOW);
+delay(dah);
+
+digitalWrite(rLED,HIGH);
+delay(dah);
+digitalWrite(rLED,LOW);
+delay(dah);
+
+
+delay(1000);}
+
+
